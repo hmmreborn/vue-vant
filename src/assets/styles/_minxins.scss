@@ -1,0 +1,23 @@
+@mixin rounded-corners($radius:4px) {
+  border-radius: $radius;
+}
+@mixin sexy-border($color, $width: 1px, $style: solid) {
+  border: {
+    color: $color;
+    width: $width;
+    style: $style;
+  }
+}
+@mixin box-shadow($shadow...) {
+  box-shadow: $shadow;
+}
+@mixin colors($text, $background, $border) {
+  color: $text;
+  background-color: $background;
+  border-color: $border;
+}
+@mixin link-colors($normal, $hover:$normal, $visited:$normal) {
+  color: $normal;
+  &:hover { color: $hover; }
+  &:visited { color: $visited; }
+}
