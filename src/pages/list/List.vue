@@ -1,6 +1,5 @@
 <template>
   <div>
-    list
     <van-tabbar v-model="tabarActive">
       <van-tabbar-item name="home" icon="home-o" replace to="/">首页</van-tabbar-item>
       <van-tabbar-item name="list" icon="apps-o" replace to="/list">分类</van-tabbar-item>
@@ -16,7 +15,16 @@ export default {
   data () {
     return {
       value: '',
-      tabarActive: 'list'
+      tabarActive: 'list',
+      items: [
+        {title: '京东超市'},
+        {title: '数码电器'},
+        {title: '京东服饰'},
+        {title: '京东生鲜'},
+        {title: '京东到家'},
+        {title: '充值缴费'},
+        {title: '领券'}
+      ]
     }
   },
   methods: {

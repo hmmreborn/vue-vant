@@ -1,4 +1,4 @@
-export default {
+const actions = {
   increment ({commit}) {
     commit('INCREMENT')
   },
@@ -12,5 +12,9 @@ export default {
         resolve()
       }, 1000)
     })
+  },
+  changeCity (ctx, city) {
+    ctx.commit('CHANGECITY', city)
   }
 }
+export default actions

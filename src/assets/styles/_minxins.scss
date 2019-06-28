@@ -21,3 +21,8 @@
   &:hover { color: $hover; }
   &:visited { color: $visited; }
 }
+@mixin ellipsis(){
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}

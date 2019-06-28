@@ -1,7 +1,12 @@
-export default {
-  count: 0,
-  todos: [
-    { id: 1, text: '...', done: true },
-    { id: 2, text: '...', done: false }
-  ]
+let defultCity = '上海'
+try {
+  if (localStorage.city) {
+    defultCity = localStorage.city
+  }
+} catch (e) {
 }
+const state = {
+  count: 0,
+  city: defultCity
+}
+export default state

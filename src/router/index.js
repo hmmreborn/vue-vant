@@ -1,9 +1,11 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Home from '@/pages/Home'
-import List from '@/pages/List'
-import Shopping from '@/pages/Shopping'
-import Setting from '@/pages/Setting'
+import Home from '@/pages/home/Home'
+import City from '@/pages/city/City'
+import List from '@/pages/list/List'
+import Detail from '@/pages/detail/Detail'
+import Shopping from '@/pages/shopping/Shopping'
+import Setting from '@/pages/setting/Setting'
 import Login from '@/pages/Login'
 import Register from '@/pages/Register'
 Vue.use(Router)
@@ -16,14 +18,19 @@ export default new Router({
       component: Home
     },
     {
-      path: '/home',
-      name: 'Home',
-      component: Home
+      path: '/city',
+      name: 'City',
+      component: City
     },
     {
       path: '/list',
       name: 'List',
       component: List
+    },
+    {
+      path: '/detail/:id',
+      name: Detail,
+      component: Detail
     },
     {
       path: '/shopping',
@@ -38,7 +45,8 @@ export default new Router({
     {
       path: '/login',
       name: 'Login',
-      component: Login
+      component: Login,
+      meta: { requireAuth: true }
     },
     {
       path: '/register',
