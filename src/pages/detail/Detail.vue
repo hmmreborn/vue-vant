@@ -1,17 +1,20 @@
 <template>
     <div>
+      <detail-header></detail-header>
       <detail-swiper :galleryImgs="galleryImgs"></detail-swiper>
       <detail-goods></detail-goods>
     </div>
 </template>
 
 <script>
+import DetailHeader from './component/Header'
 import DetailSwiper from './component/Swiper'
 import DetailGoods from './component/Goods'
 import axios from 'axios'
 export default {
   name: 'Detail',
   components: {
+    DetailHeader,
     DetailSwiper,
     DetailGoods
   },

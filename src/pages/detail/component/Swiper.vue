@@ -1,21 +1,26 @@
 <template>
   <div class="swiper-box">
-    <van-swipe :autoplay="3000">
-      <van-swipe-item v-for="(image, index) in galleryImgs" :key="index">
-        <img :src="image" class="swipe-img" @click="swipeImgClick(index)"/>
-      </van-swipe-item>
-    </van-swipe>
-    <van-image-preview
-      v-model="show"
-      :images="galleryImgs"
-      @change="onChange"
-    >
-    </van-image-preview>
+    <div class="swiper-ctx">
+      <van-swipe>
+        <van-swipe-item v-for="(image, index) in galleryImgs" :key="index">
+          <img :src="image" class="swipe-img"/>
+        </van-swipe-item>
+        <div class="custom-indicator" slot="indicator" @click="componentCall">{{ current + 1 }}/{{galleryImgs.length}}</div>
+      </van-swipe>
+    </div>
+    <fade-animation>
+      <van-image-preview
+        v-model="show"
+        :images="galleryImgs"
+      >
+      </van-image-preview>
+    </fade-animation>
   </div>
 </template>
 
 <script>
-import {ImagePreview} from 'vant'
+import CommonGallery from '../../common/gallery/Gallery'
+import FadeAnimation from '../../common/fade/Fade'
 export default {
   name: 'DetailSwiper',
   props: {
@@ -23,25 +28,38 @@ export default {
   },
   data () {
     return {
-      show: false,
-      index: 0
+      current: 0,
+      show: false
     }
   },
-
+  components: {
+    CommonGallery,
+    FadeAnimation
+  },
   methods: {
-    onChange (index) {
-      this.index = index
-    },
-    swipeImgClick (index) {
-      console.log(index)
-      ImagePreview(this.galleryImgs)
+    componentCall () {
+      this.show = true
     }
   }
 }
 </script>
 
 <style scoped lang="scss">
+.swiper-ctx{
+  width: 100%;
+  height: 0;
+  padding-bottom: 100%;
+}
 .swipe-img{
   width: 100%;
+}
+.custom-indicator {
+  position: absolute;
+  right: 5px;
+  bottom: 5px;
+  padding: 2px 5px;
+  color: #fff;
+  font-size: 12px;
+  background: rgba(0, 0, 0, .1);
 }
 </style>
