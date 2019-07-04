@@ -14,6 +14,10 @@ export default new Router({
   routes: [
     {
       path: '/',
+      redirect: '/home'
+    },
+    {
+      path: '/home',
       name: 'Home',
       component: Home
     },
@@ -52,6 +56,10 @@ export default new Router({
       path: '/register',
       name: 'Register',
       component: Register
+    },
+    {
+      path: '*',
+      component: () => import('@/pages/NotFound/404')
     }
   ]
 })

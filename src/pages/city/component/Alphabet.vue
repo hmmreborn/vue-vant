@@ -82,5 +82,6 @@ export default {
     color: #000;
     font-size: .75rem;
   }
+  .item.cur{color: #1989fa;font-size: 1rem}
 }
 </style>

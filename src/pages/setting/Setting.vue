@@ -67,6 +67,7 @@ export default {
       width: 100%;
       height: 53vw;
       display: block;
+      background-image: linear-gradient(to top, #a8edea 0%, #fed6e3 100%);
     }
     &-group {
       margin-bottom: 15px;

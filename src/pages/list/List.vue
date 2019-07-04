@@ -1,6 +1,6 @@
 <template>
   <div class="class">
-    <van-nav-bar title="分类"  left-arrow fixed @click-right="onClickRight">
+    <van-nav-bar title="分类"  left-arrow fixed @click-right="onClickRight" @click-left="onClickLeft">
       <van-icon name="ellipsis" slot="right" />
     </van-nav-bar>
     dv
@@ -52,6 +52,9 @@ export default {
     listClick (index) {
       this.active = index
       this.detialtext = index
+    },
+    onClickLeft () {
+      this.$router.push('/')
     },
     onClickRight () {
       console.log('sss')

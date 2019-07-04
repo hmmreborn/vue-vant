@@ -13,6 +13,9 @@ import DetailGoods from './component/Goods'
 import axios from 'axios'
 export default {
   name: 'Detail',
+  props: {
+    id: String
+  },
   components: {
     DetailHeader,
     DetailSwiper,
