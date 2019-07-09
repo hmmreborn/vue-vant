@@ -18,7 +18,7 @@ import HomeNews from './component/News'
 import HomeSpike from './component/Spike'
 import HomeRecommend from './component/Recommend'
 import HomeFooter from './component/Footer'
-import axios from 'axios'
+import api from '../../api'
 import {mapState} from 'vuex'
 export default {
   name: 'Home',
@@ -46,7 +46,7 @@ export default {
   },
   methods: {
     getHomeInfo () {
-      axios.get('/api/index.json?city=' + this.city)
+      api.get('home?city=' + this.city)
         .then(this.getHomeInfoSucc)
         .catch(function (error) {
           console.log(error)

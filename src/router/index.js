@@ -6,11 +6,12 @@ import List from '@/pages/list/List'
 import Detail from '@/pages/detail/Detail'
 import Shopping from '@/pages/shopping/Shopping'
 import Setting from '@/pages/setting/Setting'
+import Order from '@/pages/setting/Order'
 import Login from '@/pages/Login'
 import Register from '@/pages/Register'
 Vue.use(Router)
 
-export default new Router({
+const router = new Router({
   routes: [
     {
       path: '/',
@@ -19,7 +20,10 @@ export default new Router({
     {
       path: '/home',
       name: 'Home',
-      component: Home
+      component: Home,
+      meta: {
+        requireAuth: true
+      }
     },
     {
       path: '/city',
@@ -44,7 +48,13 @@ export default new Router({
     {
       path: '/setting',
       name: 'Setting',
-      component: Setting
+      component: Setting,
+      meta: { requireAuth: true }
+    },
+    {
+      path: '/order',
+      name: 'Order',
+      component: Order
     },
     {
       path: '/login',
@@ -63,3 +73,4 @@ export default new Router({
     }
   ]
 })
+export default router

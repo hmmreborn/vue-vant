@@ -6,6 +6,8 @@
           v-model="phone"
           center
           clearable
+          :error-message="sms"
+          :error="error"
           label="手机号"
           placeholder="请输入手机号码"
         >
@@ -41,6 +43,7 @@ export default {
       phone: '',
       sms: '',
       password: '',
+      error: false,
       checked: true
     }
   }

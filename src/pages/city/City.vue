@@ -8,7 +8,7 @@
 </template>
 
 <script>
-import axios from 'axios'
+import api from '../../api'
 import CityHeader from './component/Header'
 import CitySearch from './component/Search'
 import CityList from './component/List'
@@ -30,7 +30,7 @@ export default {
   },
   methods: {
     getCityInfo () {
-      axios.get('/api/city.json')
+      api.get('city')
         .then(this.getCityInfoSucc)
         .catch((err) => {
           console.log(err)

@@ -35,7 +35,7 @@
 
 <script>
 import BScroll from 'better-scroll'
-import axios from 'axios'
+import api from '../../api'
 export default {
   name: 'List',
   data () {
@@ -61,7 +61,7 @@ export default {
     }
   },
   created () {
-    axios.get('/api/list.json').then(res => {
+    api.get('list').then(res => {
       console.log(res.data.data)
       this.classList = res.data.data.classList
     })

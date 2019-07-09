@@ -2,7 +2,7 @@
     <div>
       <detail-header></detail-header>
       <detail-swiper :galleryImgs="galleryImgs"></detail-swiper>
-      <detail-goods></detail-goods>
+      <detail-goods :sightName="sightName" :price="price"></detail-goods>
     </div>
 </template>
 
@@ -10,12 +10,9 @@
 import DetailHeader from './component/Header'
 import DetailSwiper from './component/Swiper'
 import DetailGoods from './component/Goods'
-import axios from 'axios'
+import api from '../../api'
 export default {
   name: 'Detail',
-  props: {
-    id: String
-  },
   components: {
     DetailHeader,
     DetailSwiper,
@@ -23,12 +20,15 @@ export default {
   },
   data () {
     return {
-      galleryImgs: []
+      galleryImgs: [],
+      sightName: '',
+      price: '',
+      id: 0
     }
   },
   methods: {
     getDetailInfo: function () {
-      axios.get('/api/detail.json', {
+      api.get('detail', {
         params: {
           id: this.$route.params.id
         }
@@ -37,13 +37,23 @@ export default {
     handleGetDataSucc (res) {
       res = res.data
       if (res.ret && res.data) {
-        const data = res.data
+        const data = res.data.detail[this.id]
         this.galleryImgs = data.galleryImgs
+        this.sightName = data.sightName
+        const formatPrice = data.price
+        const newPrice = (formatPrice / 100).toFixed(2)
+        this.price = newPrice
       }
     }
   },
   mounted () {
     this.getDetailInfo()
+  },
+  activated () {
+    if (this.id !== this.$route.params.id) {
+      this.id = this.$route.params.id
+      this.getDetailInfo()
+    }
   }
 }
 </script>
