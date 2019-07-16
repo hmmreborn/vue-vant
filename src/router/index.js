@@ -6,6 +6,8 @@ import List from '@/pages/list/List'
 import Detail from '@/pages/detail/Detail'
 import Shopping from '@/pages/shopping/Shopping'
 import Setting from '@/pages/setting/Setting'
+import Address from '@/pages/setting/Address'
+import AddressEdit from '@/pages/setting/AddressEdit'
 import Order from '@/pages/setting/Order'
 import Login from '@/pages/Login'
 import Register from '@/pages/Register'
@@ -50,6 +52,16 @@ const router = new Router({
       name: 'Setting',
       component: Setting,
       meta: { requireAuth: true }
+    },
+    {
+      path: '/address',
+      name: 'Address',
+      component: Address
+    },
+    {
+      path: '/addressEdit',
+      name: 'AddressEdit',
+      component: AddressEdit
     },
     {
       path: '/order',

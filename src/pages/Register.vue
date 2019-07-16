@@ -46,7 +46,8 @@ export default {
       error: false,
       checked: true
     }
-  }
+  },
+  methods: {}
 }
 </script>
 

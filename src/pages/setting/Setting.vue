@@ -26,14 +26,14 @@
       <van-cell icon="records" title="全部订单" is-link replace to="/order"/>
     </van-cell-group>
     <van-cell-group>
+      <van-cell icon="gift-o" title="地址管理" is-link to="/address"/>
       <van-cell icon="points" title="我的积分" is-link />
       <van-cell icon="gold-coin-o" title="我的优惠券" is-link />
-      <van-cell icon="gift-o" title="我收到的礼物" is-link />
     </van-cell-group>
     <van-tabbar v-model="tabarActive">
       <van-tabbar-item name="home" icon="home-o" replace to="/">首页</van-tabbar-item>
       <van-tabbar-item name="list" icon="apps-o" replace to="/list">分类</van-tabbar-item>
-      <van-tabbar-item name="shopping" icon="shopping-cart-o" replace to="/shopping" info="5">购物车</van-tabbar-item>
+      <van-tabbar-item name="shopping" icon="shopping-cart-o" replace to="/shopping" info="1">购物车</van-tabbar-item>
       <van-tabbar-item name="setting" icon="contact" replace to="/setting">我的</van-tabbar-item>
     </van-tabbar>
   </div>

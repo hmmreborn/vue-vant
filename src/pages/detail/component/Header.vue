@@ -1,9 +1,6 @@
 <template>
  <div>
-   <router-link
-     tag="div"
-     to="/"
-     class="header-abs" :style="backgroundStyle"><van-icon name="arrow-left"/></router-link>
+   <div class="header-abs" :style="backgroundStyle" @click="goBack"><van-icon name="arrow-left"/></div>
    <div class="header-more" :style="backgroundStyle"><van-icon name="ellipsis"></van-icon></div>
    <div class="header-fixed" v-show="!showAbs" :style="opacityStyle">
      <div type="flex" justify="space-around" class="detail_anchor">
@@ -35,6 +32,9 @@ export default {
     }
   },
   methods: {
+    goBack () {
+      this.$router.go(-1)
+    },
     handleScroll () {
       const top = document.scrollingElement.scrollTop
       if (top > 60) {

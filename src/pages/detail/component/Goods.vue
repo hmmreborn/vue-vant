@@ -15,7 +15,7 @@
         <van-goods-action-button type="danger" text="立即购买" @click="sorry"></van-goods-action-button>
       </van-goods-action>
     </div>
-    <div class="goods-assess">
+    <div class="goods-assess" style="height: 800px">
       评价
     </div>
     <div class="goods-detail">

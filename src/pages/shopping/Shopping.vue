@@ -28,7 +28,7 @@
     <van-tabbar v-model="tabarActive">
       <van-tabbar-item name="home" icon="home-o" replace to="/">首页</van-tabbar-item>
       <van-tabbar-item name="list" icon="apps-o" replace to="/list">分类</van-tabbar-item>
-      <van-tabbar-item name="shopping" icon="shopping-cart-o" replace to="/shopping" info="5">购物车</van-tabbar-item>
+      <van-tabbar-item name="shopping" icon="shopping-cart-o" replace to="/shopping" :info="checkedGoods.length">购物车</van-tabbar-item>
       <van-tabbar-item name="setting" icon="contact" replace to="/setting">我的</van-tabbar-item>
     </van-tabbar>
   </div>
@@ -55,6 +55,13 @@ export default {
         price: 129800,
         num: 1,
         thumb: 'https://img10.360buyimg.com/mobilecms/s372x372_jfs/t7231/108/4477642032/95042/e55eda0b/5bc06c79N63a9d706.jpg!q70.dpg.webp'
+      }, {
+        id: '2',
+        title: 'realme X 4800万双摄 升降摄像头 屏下指纹 游戏手机 8GB+128GB朋克蓝 全网通双卡',
+        desc: '0.138kg/件，蓝牙通话版 蓝色',
+        price: 169900,
+        num: 1,
+        thumb: 'https://img12.360buyimg.com/mobilecms/s372x372_jfs/t30055/157/1561579309/330348/51cda39b/5ce4f888N01ba2454.jpg!q70.dpg.webp'
       }]
     }
   },
